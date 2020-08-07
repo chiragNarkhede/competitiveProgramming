@@ -1,0 +1,55 @@
+Given an integer n, your task is to complete the function convertToRoman which prints the corresponding roman number of n. Various symbols and their values are given below.
+
+I 1
+V 5
+X 10
+L 50
+C 100
+D 500
+M 1000
+
+Input:
+The first line of each test case contains the no of test cases T. Then T test cases follow. Each test case contains a single integer n.
+
+Output:
+Complete convertToRoman function and return the roman number representation of n.
+
+Your Task:
+Complete the function convertToRoman() which takes an integer N as input parameter and returns the equivalent roman. 
+
+Expected Time Complexity: O(log10N)
+Expected Auxiliary Space: O(log10N * 10)
+
+Constraints:
+1<=T<=100
+1<=n<=3999
+
+Example:
+Input
+2
+5
+3
+
+Output
+V
+III 
+
+
+====================================================================
+Code:
+
+String convertToRoman(int n)
+    {
+      StringBuilder number = new StringBuilder();
+      String[] literal = {"M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"};
+      int[] values = {1000,900,500,400,100,90,50,40,10,9,5,4,1};
+      for(int i=0;i<values.length;i++)
+      {
+          while(n>=values[i])
+          {
+              n -= values[i];
+              number.append(literal[i]);
+          }
+      }
+      return number.toString();
+      }
