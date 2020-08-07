@@ -1,0 +1,42 @@
+Given a String of length S, reverse the whole string without reversing the individual words in it. Words are separated by dots.
+
+Example 1:
+
+Input:
+S = i.like.this.program.very.much
+Output: much.very.program.this.like.i
+Explanation: After reversing the whole
+string(not individual words), the input
+string becomes
+much.very.program.this.like.i.
+Example 1:
+
+Input:
+
+S = pqr.mno
+Output: mno.pqr
+Explanation: After reversing the whole
+string , the input string becomes
+mno.pqr.
+Your Task:
+The task is to complete the function reverseWords() which reverse words from the given string and prints the answer. 
+
+Expected Time Complexity: O(|S|)
+Expected Auxiliary Space: O(1)
+
+Constraints:
+1 <= |S| <= 2000
+=====================================================================
+Code:
+
+ public static void reverseWords(String sd) {
+       
+       String s[] = sd.split("\\.");
+       String output ="";
+       for(int i=s.length-1;i>=0;i--)
+       {
+           output+=s[i] +".";
+       }
+       System.out.println(ans.substring(0,output.length()-1));
+    }
+      
